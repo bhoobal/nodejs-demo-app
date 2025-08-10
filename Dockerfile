@@ -1,17 +1,19 @@
 # Use official Node.js LTS image
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy only package.json and package-lock.json first for better caching
+COPY package.json ./
 
 # Install dependencies
 RUN npm install --production
 
-# Copy application code
-COPY . .
+# Copy only the main app files (not subfolders)
+COPY index.js ./
+COPY README.md ./
+# COPY data/users.json ./data/
 
 # Expose port
 EXPOSE 3000

@@ -22,7 +22,13 @@ This app provides a POST endpoint to add user details (name, dob, sex) and save 
 
 1. Start the app:
 	 - Locally: `node index.js`
-	 - Or using Docker: `docker run -it -p 3000:3000 nodejsdemo:1.0`
+	 - Or using Docker (with data persistence):
+
+```sh
+docker run -it -p 3000:3000 -v $(pwd)/data:/usr/src/app/data nodejsdemo:1.1
+```
+
+This will mount your local `data` folder to the container, so changes to `users.json` are persistent.
 
 2. Use curl or Postman to send a POST request:
 
@@ -32,4 +38,4 @@ curl -X POST http://localhost:3000/users \
 	-d '{"name":"John Doe","dob":"1990-01-01","sex":"M"}'
 ```
 
-If successful, you will receive a confirmation message and the user will be saved in `users.json`.
+If successful, you will receive a confirmation message and the user will be saved in `data/users.json`.

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Adam Smith",
+    "dob": "1980-11-17",
+    "sex": "m"
+  },
+  {
+    "name": "yhalini bhoobal",
+    "dob": "2014-03-03",
+    "sex": "f"
+  },
+  {
+    "name": "Tom Jones",
+    "dob": "2000-07-28",
+    "sex": "m"
+  },
+  {
+    "name": "dharni bhoobal",
+    "dob": "2024-10-15",
+    "sex": "f"
+  },
+  {
+    "name": "bhoobal",
+    "dob": "1979-10-15",
+    "sex": "m"
+  }
+]
